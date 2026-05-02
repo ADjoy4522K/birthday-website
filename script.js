@@ -73,8 +73,13 @@ document.addEventListener('DOMContentLoaded', function() {
     updateMusicButton();
     
     // Initialize favorite music player
-    document.getElementById('fav-music-title').textContent = getFavMusicTitle();
-    document.getElementById('fav-audio-source').src = getFavMusicUrl();
+    const favAudio = document.getElementById('fav-audio-player');
+const favAudioSource = document.getElementById('fav-audio-source');
+
+document.getElementById('fav-music-title').textContent = getFavMusicTitle();
+
+favAudioSource.src = getFavMusicUrl();
+favAudio.load();
     
     // Play background music on first user interaction if not already started
     let played = false;
