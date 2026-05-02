@@ -1,0 +1,622 @@
+/* ==================== GENERAL STYLES ==================== */
+:root {
+    --primary-color: #b19cd9;
+    --secondary-color: #9370db;
+    --accent-color: #b19cd9;
+    --light-bg: #f0e6fa;
+    --dark-text: #4a3f35;
+    --light-text: #ffffff;
+    --border-radius: 15px;
+    --shadow: 0 8px 32px rgba(177, 156, 217, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0e6fa 0%, #e6d7f0 100%);
+    color: var(--dark-text);
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* ==================== BACKGROUND EFFECTS ==================== */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    pointer-events: none;
+}
+
+.animated-heart {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    opacity: 0.4;
+    animation: randomFloat var(--duration) infinite ease-in-out;
+    animation-delay: var(--delay);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes randomFloat {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px) rotate(180deg) scale(1.2);
+        opacity: 0.7;
+    }
+    85% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-200px) translateX(-30px) rotate(360deg) scale(0.6);
+        opacity: 0;
+    }
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* ==================== CONTAINER ==================== */
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ==================== HEADER ==================== */
+.header {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 20, 147, 0.1));
+    border-radius: var(--border-radius);
+    animation: slideDown 0.8s ease-out;
+}
+
+#greeting-title {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+/* ==================== SPECIAL MESSAGE ==================== */
+.special-message-section {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.message-box {
+    background: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    animation: zoomIn 0.6s ease-out;
+    border: 2px solid var(--primary-color);
+}
+
+.message-box i {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin: 0 15px;
+}
+
+.message-box p {
+    font-size: 1.3rem;
+    color: var(--dark-text);
+    line-height: 1.8;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+/* ==================== GALLERY SECTION ==================== */
+.gallery-section {
+    margin: 60px 0;
+}
+
+.gallery-section h2,
+.messages-section h2,
+.timeline-section h2,
+.buttons-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.gallery-section h2::after,
+.messages-section h2::after,
+.timeline-section h2::after,
+.buttons-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.gallery-container {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    animation: slideUp 0.6s ease-out;
+}
+
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.slideshow-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.slide-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 105, 180, 0.8);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slide-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-50%) scale(1.2);
+}
+
+.slide-button.prev {
+    left: 10px;
+}
+
+.slide-button.next {
+    right: 10px;
+}
+
+.gallery-dots {
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+}
+
+/* ==================== MUSIC PLAYER ==================== */
+
+
+
+/* ==================== MESSAGES SECTION ==================== */
+.messages-section {
+    margin: 60px 0;
+}
+
+.messages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.message-card {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.message-card::before {
+    content: '💕';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 3rem;
+    opacity: 0.1;
+}
+
+.message-card p {
+    font-size: 1.1rem;
+    color: var(--dark-text);
+    font-weight: 500;
+    text-align: center;
+}
+
+.message-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05), rgba(255, 20, 147, 0.05));
+}
+
+/* ==================== TIMELINE ==================== */
+.timeline-section {
+    margin: 60px 0;
+}
+
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+    margin-right: auto;
+    width: 48%;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+    margin-right: 0;
+    width: 48%;
+    text-align: left;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--primary-color);
+    z-index: 10;
+}
+
+.timeline-content {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.timeline-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.timeline-content p {
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.timeline-date {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+}
+
+.timeline-image {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.timeline-item:nth-child(odd) .timeline-image {
+    right: 10px;
+    top: -20px;
+}
+
+.timeline-item:nth-child(even) .timeline-image {
+    left: 10px;
+}
+
+.timeline-image-top,
+.timeline-image-bottom {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-marker {
+        left: 20px;
+    }
+    
+    .timeline-image {
+        display: none;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+        text-align: left;
+    }
+}
+
+/* ==================== INTERACTIVE BUTTONS ==================== */
+.buttons-section {
+    margin: 60px 0;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    animation: slideUp 0.8s ease-out;
+}
+
+.fun-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 25px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fun-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.5);
+}
+
+.fun-button:active {
+    transform: scale(0.98);
+}
+
+.fun-button i {
+    font-size: 1.5rem;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 2px solid var(--primary-color);
+    margin-top: 60px;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    #greeting-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .gallery-section h2,
+    .messages-section h2,
+    .timeline-section h2,
+    .buttons-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .message-box {
+        padding: 25px;
+    }
+    
+    .message-box p {
+        font-size: 1rem;
+    }
+    
+    .slideshow-image {
+        height: 300px;
+    }
+    
+    .button-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+    }
+    
+    #greeting-title {
+        font-size: 2rem;
+    }
+    
+    .header {
+        padding: 40px 15px;
+    }
+    
+    .slideshow-image {
+        height: 250px;
+    }
+    
+    .messages-grid {
+        grid-template-columns: 1fr;
+    }
+}

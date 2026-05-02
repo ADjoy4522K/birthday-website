@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Music URL (add a music file or YouTube link) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday to You ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- EASY EDIT SECTION - Change your content here! -->
+    <div id="config" style="display: none;">
+        <!-- Basic Info -->
+        <div data-name>Hitrishna Khakhalary</div>
+        <div data-birthday>May 4</div>
+        <div data-special-message>Happy Birthday, my love ❤️    
+
+I don’t even know where to begin, because words feel too small for what I feel for you. You mean so much to me—more than I could ever fully explain. Your presence in my life has made everything feel lighter, brighter, and so much more meaningful. Even on my worst days, just thinking about you brings me peace.
+
+I truly admire you—not just for who you are, but for the way you exist so beautifully in my life. I respect you deeply, your heart, your strength, your kindness… everything about you makes me feel lucky to love you.
+
+You didn’t just come into my life—you changed it. You made my world softer, happier, and full of something I never knew I was missing.
+
+All I wish for is us. I hope we stay together through everything, grow together, and hold on to each other till our very last breath. Because loving you is the most natural, real, and beautiful thing I’ve ever felt.
+
+I love you, always and forever 💖
+💕</div>
+        
+        <!-- Photos (add your image URLs here) -->
+        <div data-photos>
+            images/1.jpeg
+            images/9.jpeg
+            images/2.jpeg
+            images/4.jpeg
+            images/8.jpeg
+            images/7.jpeg
+            images/5.jpeg
+            images/6.jpeg
+        </div>
+        
+        <!-- Music URL (add a music file or YouTube link) -->
+        <div data-music-url>music/YTDown_YouTube_Odhikar-Tanmoy-Saikia-_-STANNiUM-OLONGKA_Media_wgoY-SM4Lrk_009_128k.mp3</div>
+        <div data-music-title>Odhikar</div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    
+    <!-- Confetti effect -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Floating hearts background -->
+    <div class="hearts-container"></div>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop style="display:none;" src="music/YTDown_YouTube_Odhikar-Tanmoy-Saikia-_-STANNiUM-OLONGKA_Media_wgoY-SM4Lrk_009_128k.mp3"></audio>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 id="greeting-title">Happy Birthday</h1>
+            <p id="greeting-subtitle" class="subtitle">To the one I love most</p>
+        </header>
+
+        <!-- Special Message -->
+        <section class="special-message-section">
+            <div class="message-box">
+                <i class="fas fa-heart"></i>
+                <p id="special-message"></p>
+                <i class="fas fa-heart"></i>
+            </div>
+        </section>
+
+        <!-- Photo Gallery / Slideshow -->
+        <section class="gallery-section">
+            <h2>Our Beautiful Memories</h2>
+            <div class="gallery-container">
+                <div class="slideshow-wrapper">
+                    <img id="slideshow-image" src="" alt="Memory" class="slideshow-image">
+                    <button class="slide-button prev" onclick="changeSlide(-1)">❮</button>
+                    <button class="slide-button next" onclick="changeSlide(1)">❯</button>
+                </div>
+                <div class="gallery-dots" id="gallery-dots"></div>
+            </div>
+        </section>
+
+        <!-- Love Messages -->
+        <section class="messages-section">
+            <h2>Why I Love You</h2>
+            <div class="messages-grid" id="messages-grid">
+                <div class="message-card">
+                    <p>Your smile brightens my darkest days</p>
+                </div>
+                <div class="message-card">
+                    <p>You make every moment feel special</p>
+                </div>
+                <div class="message-card">
+                    <p>With you, I found my soulmate</p>
+                </div>
+                <div class="message-card">
+                    <p>Every day with you is a blessing</p>
+                </div>
+                <div class="message-card">
+                    <p>You're my greatest adventure</p>
+                </div>
+                <div class="message-card">
+                    <p>I love you more each day</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Timeline -->
+        <section class="timeline-section">
+            <h2>Our Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <img src="images/WhatsApp%20Image%202026-05-02%20at%207.14.07%20PM.jpeg" alt="Memory" class="timeline-image">
+                    <div class="timeline-content">
+                        <h3>The Day We Met 28November.7:21pm</h3>
+                        <p>The Day I texted you, everything changed and I knew you were special,someone who will heal me and I was right</p>
+                        <span class="timeline-date">Our Beginning</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <img src="images/WhatsApp%20Image%202026-05-02%20at%207.14.06%20PM.jpeg" alt="Memory" class="timeline-image">
+                    <div class="timeline-content">
+                        <h3>I Fell in Love,26 December 2025,10:59pm</h3>
+                        <p>n every smile of yours and every echo of your laughter, I kept falling—deeper than before, into a love I never want to escape.</p>
+                        <span class="timeline-date">Then</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <img src="images/34.jpeg" alt="Memory" class="timeline-image">
+                    <div class="timeline-content">
+                        <h3>Today - Your Birthday,4th May 2026</h3>
+                        <p>Celebrating the birthday of the most wonderful person I know, the one who fills my life with love, laughter, and endless happiness.</p>
+                        <span class="timeline-date">Today</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <img src="images/32.jpeg" alt="Memory" class="timeline-image">
+                    <div class="timeline-content">
+                        <h3>Forever With You</h3>
+                        <p>Let’s build a lifetime of beautiful memories together, where every moment feels like a dream we never want to wake from.</p>
+                        <span class="timeline-date">Our Future</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Buttons -->
+        <section class="buttons-section">
+            <h2>Click & Be Surprised</h2>
+            <div class="button-grid">
+                <button class="fun-button" onclick="triggerEffect('hearts')">
+                    <i class="fas fa-heart"></i> Send Love
+                </button>
+                <button class="fun-button" onclick="triggerEffect('fireworks')">
+                    <i class="fas fa-star"></i> Celebrate
+                </button>
+                <button class="fun-button" onclick="triggerEffect('confetti')">
+                    <i class="fas fa-gift"></i> Party!
+                </button>
+                <button class="fun-button" onclick="triggerEffect('rainbow')">
+                    <i class="fas fa-rainbow"></i> Magic
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with 💕 for someone special</p>
+            <p id="footer-date"></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
