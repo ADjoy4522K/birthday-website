@@ -433,42 +433,66 @@ body {
 }
 
 @media (max-width: 768px) {
-    .timeline::before {
-        left: 20px;
-    }
-    
-    .timeline-marker {
-        left: 20px;
-    }
-    
-      .timeline-image {
-        display: block;
+    .timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #d6b3ff;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 25px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 3px solid #b980ff;
+    border-radius: 50%;
+}
+
+.timeline-content {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(185, 128, 255, 0.3);
+
+}
+
+.timeline-content h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.timeline-content p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* IMAGE FIX */
+.timeline-image {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
-    }
+    margin-bottom: 10px;
+}
     
-    .timeline-item {
-    width: 100%;
-    }
-   
-    .timeline-item {
-    margin-bottom: 20px;
-   }
-  
-   .timeline-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-   }
-    
-    .timeline-item:nth-child(odd) .timeline-content,
-    .timeline-item:nth-child(even) .timeline-content {
-        width: calc(100% - 50px);
-        margin-left: 50px;
-        text-align: left;
-    }
 }
 
 /* ==================== INTERACTIVE BUTTONS ==================== */
