@@ -9,6 +9,8 @@ const getPhotos = () => {
     return photosText.split('\n').map(url => url.trim()).filter(url => url);
 };
 const getMusicUrl = () => configDiv.querySelector('[data-music-url]').textContent.trim();
+const getFavMusicUrl = () => configDiv.querySelector('[data-fav-music-url]').textContent.trim();
+const getFavMusicTitle = () => configDiv.querySelector('[data-fav-music-title]').textContent.trim();
 
 /* ==================== ANIMATED HEARTS BACKGROUND ==================== */
 function createAnimatedHearts() {
@@ -44,8 +46,37 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('special-message').textContent = getSpecialMessage();
     document.getElementById('footer-date').textContent = `Today: ${getBirthday()}`;
     
-    // Play background music on user interaction
     const audio = document.getElementById('background-music');
+    audio.src = getMusicUrl();
+    audio.loop = true;
+    
+    const toggleButton = document.getElementById('music-toggle-button');
+    const updateMusicButton = () => {
+        if (audio.paused) {
+            toggleButton.innerHTML = '<i class="fas fa-play"></i> Play Music';
+        } else {
+            toggleButton.innerHTML = '<i class="fas fa-pause"></i> Pause Music';
+        }
+    };
+    
+    toggleButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play().catch(e => console.log('Playback failed:', e));
+        } else {
+            audio.pause();
+        }
+        updateMusicButton();
+    });
+    
+    audio.addEventListener('play', updateMusicButton);
+    audio.addEventListener('pause', updateMusicButton);
+    updateMusicButton();
+    
+    // Initialize favorite music player
+    document.getElementById('fav-music-title').textContent = getFavMusicTitle();
+    document.getElementById('fav-audio-source').src = getFavMusicUrl();
+    
+    // Play background music on first user interaction if not already started
     let played = false;
     const playMusic = () => {
         if (!played) {
