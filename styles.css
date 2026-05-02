@@ -441,24 +441,22 @@ body {
         left: 20px;
     }
     
-     .timeline-image {
+      .timeline-image {
         display: block;
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
     }
-   
-    .timeline-content {
-    overflow: hidden;
-   
-    }
     
     .timeline-item {
     width: 100%;
-    overflow: hidden;
-   }
+    }
    
+    .timeline-item {
+    margin-bottom: 20px;
+   }
+  
    .timeline-item img {
     width: 100%;
     height: auto;
