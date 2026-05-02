@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Music URL (add a music file or YouTube link) -->
+<head>
+    <!-- Music URL (add a music file or YouTube link) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday to You ❤️</title>
@@ -41,6 +42,10 @@ I love you, always and forever 💖
         <!-- Music URL (add a music file or YouTube link) -->
         <div data-music-url>music/YTDown_YouTube_Odhikar-Tanmoy-Saikia-_-STANNiUM-OLONGKA_Media_wgoY-SM4Lrk_009_128k.mp3</div>
         <div data-music-title>Odhikar</div>
+        
+        <!-- Your's Favourite Music -->
+        <div data-fav-music-url>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3</div>
+        <div data-fav-music-title>Your's Favourite</div>
     </div>
 
     <!-- ==================== MAIN CONTENT ==================== -->
@@ -62,6 +67,12 @@ I love you, always and forever 💖
             <p id="greeting-subtitle" class="subtitle">To the one I love most</p>
         </header>
 
+        <div class="music-toggle-row">
+            <button id="music-toggle-button" class="music-toggle-button">
+                <i class="fas fa-pause"></i> Pause Music
+            </button>
+        </div>
+
         <!-- Special Message -->
         <section class="special-message-section">
             <div class="message-box">
@@ -81,6 +92,21 @@ I love you, always and forever 💖
                     <button class="slide-button next" onclick="changeSlide(1)">❯</button>
                 </div>
                 <div class="gallery-dots" id="gallery-dots"></div>
+            </div>
+        </section>
+
+        <!-- Music Player -->
+        <section class="music-section">
+            <h2>Your's Favourite</h2>
+            <div class="music-player">
+                <div class="player-info">
+                    <i class="fas fa-music"></i>
+                    <span id="fav-music-title">Now Playing</span>
+                </div>
+                <audio id="fav-audio-player" controls>
+                    <source id="fav-audio-source" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
         </section>
 
