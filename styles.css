@@ -113,15 +113,32 @@ body {
     animation: slideDown 0.8s ease-out;
 }
 
-#greeting-title {
-    font-size: 4rem;
-    font-weight: bold;
+.music-toggle-row {
+    text-align: center;
+    margin: 0 auto 30px;
+}
+
+.music-toggle-button {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--primary-color);
+    color: var(--secondary-color);
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.music-toggle-button i {
+    margin-right: 10px;
+}
+
+.music-toggle-button:hover {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 10px;
-    animation: pulse 2s ease-in-out infinite;
+    color: white;
+    border-color: transparent;
 }
 
 .subtitle {
