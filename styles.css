@@ -345,6 +345,7 @@ body {
 
 #fav-audio-player {
     width: 100%;
+    max-width: 100%;
 }
 
 
