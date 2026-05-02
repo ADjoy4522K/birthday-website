@@ -729,6 +729,15 @@ body {
     .button-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
+    
+    .music-player {
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .player-info {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -757,3 +766,4 @@ body {
         grid-template-columns: 1fr;
     }
 }
+            
